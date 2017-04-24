@@ -1,0 +1,21 @@
+#content-container {
+	text-align: center; 
+	background-color: #F7F7F7;
+}
+
+#app-view {
+	margin-top: 10%;
+	background-color: #FF533D;
+}
+
+.twitch-user-row {
+	background-color: #373737;
+	width: 55%;
+	margin-top: 2%;
+	color: #F7F7F7;
+	border-radius: 5px;
+}
+
+#bottom-row {
+	margin-bottom: 2%;
+}
