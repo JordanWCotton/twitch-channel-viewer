@@ -4,27 +4,35 @@ const twitchChannels = [
         {username: 'OgamingSC2', id: '71852806'},
         {username: 'freecodecamp', id: '79776140'}
     ];
+const channelRows = [
+    {id: 'rowOne'},
+    {id: 'rowTwo'},
+    {id: 'rowThree'}
+];
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    for (let channels in twitchChannels) {
 	let httpRequest = new XMLHttpRequest();
 	
-    httpRequest.open('GET', 'https://api.twitch.tv/kraken/channels/' + twitchChannels[0].id, true);
+    httpRequest.open('GET', 'https://api.twitch.tv/kraken/streams/' + twitchChannels[channels].id, true);
 
     httpRequest.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
-    httpRequest.setRequestHeader('Client-ID', clientID);
+    httpRequest.setRequestHeader('Client-ID', clientID); 
 
-    httpRequest.onreadystatechange = function () {
+    httpRequest.onload = function () {
         if (this.readyState === 4) {
-            if (this.status >= 200 && this.status < 400) {
-                console.log('Request good');
                 let data = JSON.parse(this.responseText);
                 console.log(data);
+                let row = document.getElementById(channelRows[channels].id);
+                if (data.stream != null) {
+                    row.innerHTML = data.stream.channel.display_name  + ' || ' + data.stream.channel.game;
                 } else {
-                    console.log('Request fail');
+                    row.innerHTML = twitchChannels[channels].username + ' is not online.';
                 }
             };
         };
 
-	httpRequest.send();  
+	httpRequest.send(); 
+    };
 });

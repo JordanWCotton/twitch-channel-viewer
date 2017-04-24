@@ -1,5 +1,4 @@
-#content-container {
-	text-align: center; 
+#content-container { 
 	background-color: #F7F7F7;
 }
 
@@ -14,8 +13,10 @@
 	margin-top: 2%;
 	color: #F7F7F7;
 	border-radius: 5px;
+	min-width: 80%;
+	padding-left: 2%;
 }
 
-#bottom-row {
+.bottom-row {
 	margin-bottom: 2%;
 }
