@@ -14,9 +14,24 @@
 	color: #F7F7F7;
 	border-radius: 5px;
 	min-width: 80%;
+	padding-top: 1%;
 	padding-left: 2%;
 }
 
 .bottom-row {
 	margin-bottom: 2%;
+}
+
+.is-online {
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background-color: green;
+}
+
+.is-offline {
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background-color: red;
 }

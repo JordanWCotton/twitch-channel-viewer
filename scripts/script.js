@@ -26,9 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(data);
                 let row = document.getElementById(channelRows[channels].id);
                 if (data.stream != null) {
-                    row.innerHTML = data.stream.channel.display_name  + ' || ' + data.stream.channel.game;
+                    row.innerHTML = '<div></div>' + data.stream.channel.display_name  + ' | ' + data.stream.game + ' | <a href="' + data.stream.channel.url + '">Go now!</a>';
+                    row.firstElementChild.classList.add('is-online');
                 } else {
-                    row.innerHTML = twitchChannels[channels].username + ' is not online.';
+                    row.innerHTML = '<div></div>' + twitchChannels[channels].username + ' is not online.';
+                    row.firstElementChild.classList.add('is-offline');
                 }
             };
         };
