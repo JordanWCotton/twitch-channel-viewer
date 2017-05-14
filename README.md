@@ -1,5 +1,5 @@
 # twitch-channel-viewer
-This app is still being developed, and utilizes Twitch's API for pulling channel and user data to be displayed to the user.
+This app utilizes Twitch's API for pulling channel and user data to be displayed to the user. The user is able to search for a specific twitch user to be displayed in their list, and they will be able to see the online status of each user. If the user is online, they will be able to see the title of their current stream, and will be given a link to be taken directly to that user's live stream. If the user inputs a user that does not exist or whos account is no longer active, they will informed and no action will be taken. 
 
 # Development info
-This single page application is being developed using vanilla ES2015 javascript.
+This single page application is being developed using vanilla ES2015 javascript, with minimal jQuery usage as to maximize learning of fundamental tasks like making AJAX requests and handling JSON without the ease of a library.
