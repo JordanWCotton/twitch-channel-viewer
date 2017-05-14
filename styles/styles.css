@@ -1,16 +1,28 @@
 #content-container { 
-	background-color: #F7F7F7;
+	height: 100vh;
+	background-color: #8e44ad;
+}
+
+#app-header {
+	text-align: center;
+	padding-top: 5%;
+	color: #F7F7F7;
+}
+
+#app-header h1 {
+	font-size: 80px;
 }
 
 #app-view {
-	margin-top: 10%;
-	background-color: #FF533D;
+	margin-top: 4%;
+	background-color: #95a5a6;
+	border-radius: 6px;
 }
 
 .twitch-user-row {
 	background-color: #373737;
 	width: 55%;
-	margin-top: 2%;
+	margin-bottom: 2%;
 	color: #F7F7F7;
 	border-radius: 5px;
 	min-width: 80%;
@@ -18,8 +30,8 @@
 	padding-left: 2%;
 }
 
-.bottom-row {
-	margin-bottom: 2%;
+.top-row {
+	margin-top: 2%;
 }
 
 .is-online {
@@ -34,4 +46,21 @@
 	width: 16px;
 	border-radius: 8px;
 	background-color: red;
+}
+
+#user-input-div {
+	margin-top: 5%;
+	text-align: center;
+}
+
+#submit-button {
+	margin-top: 3%;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 750px) {
+	#app-view {
+		margin-left: 2%;
+		margin-right: 2%;
+	}
 }

@@ -14,19 +14,32 @@
     </head>
     <body>
         <div class="container-fluid" id="content-container">
+            <header class="row" id="app-header">
+                <div class="col-md-12">
+                    <h1>Twitch.tv Viewer</h1>
+                </div>
+            </header>
 	        <div class="row">
-		        <div class="col-6 offset-3" id="app-view">
-			        <div class="twitch-user-row" id="rowOne">
+		        <div class="col-md-8 offset-md-2" id="app-view">
+			        <div class="twitch-user-row top-row" id="rowOne">
 				        Channel
 			        </div>
 			        <div class="twitch-user-row" id="rowTwo">
 				        Channel
 			        </div>
-			        <div class="twitch-user-row bottom-row" id="rowThree">
+			        <div class="twitch-user-row" id="rowThree">
 				        Channel
 			        </div>
 		        </div>
 	        </div>
+            <div class="row" id="user-input-div">
+                <div class="col-md-4 offset-md-4">
+                    <input type="text" class="form-control" id="user-input" placeholder="Enter twitch username here..">
+                </div>
+                <div class="col-md-4 offset-md-4">
+                    <button type="button" id="submit-button" class="btn btn-success">Add user!</button>
+                </div>
+            </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
