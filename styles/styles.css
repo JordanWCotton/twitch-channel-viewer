@@ -13,10 +13,29 @@
 	font-size: 80px;
 }
 
-#app-view {
+#online-status {
+	text-align: center;
 	margin-top: 4%;
+	margin-bottom: 1%;
+}
+
+#show-online {
+	background-color: #95a5a6;
+}
+
+#show-online div {
+	float:left;
+	margin-right: 2%;
+}
+
+#show-all {
+	background-color: #95a5a6;
+}
+
+#app-view {
 	background-color: #95a5a6;
 	border-radius: 6px;
+	min-height: 50px;
 }
 
 .twitch-user-row {
@@ -46,6 +65,10 @@
 	width: 16px;
 	border-radius: 8px;
 	background-color: red;
+}
+
+.is-hidden {
+	display: none;
 }
 
 #user-input-div {

@@ -1,4 +1,4 @@
-const clientID = '';
+const clientID = 'lr4rv2eagssyln2lhrm19l8jrjn1mc';
 const twitchChannels = [
         {username: 'esl_sc2', id: '30220059'},
         {username: 'OgamingSC2', id: '71852806'},
@@ -10,6 +10,7 @@ const channelRows = [
     {id: 'rowThree'}
 ];
 
+let isOnlineSelected = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     for (let channels in twitchChannels) {
@@ -42,6 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
 $('#submit-button').click(() => {
     findTwitchUser($('#user-input').val());
 });
+
+$('#show-online').click(() => {
+    if (isOnlineSelected === false) {
+        isOnline();
+        $('#show-online').html('Show All');
+    } else {
+        showAll();
+        $('#show-online').html('<div class="is-online"></div>Show Online')
+    }
+    isOnlineSelected = !isOnlineSelected;
+})
 
 function findTwitchUser(user) {
     let httpRequest = new XMLHttpRequest();
@@ -92,4 +104,25 @@ function addTwitchUser(username, userID) {
         }
     }
     nextRequest.send();
-}
+};
+
+function isOnline() {
+    let arr = $('#app-view').children();
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].firstElementChild.className == 'is-offline') {
+            arr[i].classList.add('is-hidden');
+        } 
+    };
+};
+
+function showAll() {
+    let arr = $('#app-view').children();
+
+    for (let i = 0; i < arr.length; i++) {
+        /* Following is not supported in browsers < IE 9 */
+        if (arr[i].classList.contains('is-hidden')) {
+            arr[i].classList.remove('is-hidden');
+        }
+    };
+};
