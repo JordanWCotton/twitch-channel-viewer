@@ -96,11 +96,15 @@ function addTwitchUser(username, userID) {
             console.log(data);
             
             if (data.stream != null) {
-                let child = document.createElement('<div class="twitch-user-row"><div></div>' + data.stream.channel.display_name  + ' | ' + data.stream.game + ' | <a href="' + data.stream.channel.url + '" target="_blank">Go now!</a></div>');
+                let child = document.createElement('div');
+                child.innerHTML = '<div></div>' + data.stream.channel.display_name  + ' | ' + data.stream.game + ' | <a href="' + data.stream.channel.url + '" target="_blank">Go now!</a>';
+                child.classList.add('twitch-user-row');
                 appView.appendChild(child);
                 appView.lastChild.firstElementChild.classList.add('is-online');
             } else {
-                let child = document.createElement('<div class="twitch-user-row"><div></div>' + username + ' is not online.');
+                let child = document.createElement(div);
+                child.innerHTML = '<div></div>' + username + ' is not online.';
+                child.classList.add('twitch-user-row');
                 appView.appendChild(child);
                 appView.lastChild.firstElementChild.classList.add('is-offline');
             }
