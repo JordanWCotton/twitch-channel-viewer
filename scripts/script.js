@@ -1,4 +1,4 @@
-const clientID = '';
+const clientID = 'lr4rv2eagssyln2lhrm19l8jrjn1mc';
 const twitchChannels = [
         {username: 'esl_sc2', id: '30220059'},
         {username: 'OgamingSC2', id: '71852806'},
@@ -9,7 +9,10 @@ const channelRows = [
     {id: 'rowTwo'},
     {id: 'rowThree'}
 ];
-
+const appView = document.getElementById('app-view');
+const userInput = document.getElementById('user-input');
+const submitButton = document.getElementById('submit-button');
+const showOnlineButton = document.getElementById('show-online');
 let isOnlineSelected = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,17 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-$('#submit-button').click(() => {
-    findTwitchUser($('#user-input').val());
+submitButton.addEventListener('click', () => {
+    findTwitchUser(userInput.value);
 });
 
-$('#show-online').click(() => {
+showOnlineButton.addEventListener('click', () => {
     if (isOnlineSelected === false) {
         isOnline();
-        $('#show-online').html('Show All');
+        showOnlineButton.innerHTML = 'Show All';
     } else {
         showAll();
-        $('#show-online').html('<div class="is-online"></div>Show Online')
+        showOnlineButton.innerHTML = '<div class="is-online"></div>Show Online';
     }
     isOnlineSelected = !isOnlineSelected;
 })
@@ -89,15 +92,14 @@ function addTwitchUser(username, userID) {
 
     nextRequest.onload = function() {
         if (this.readyState === 4) {
-            let appView = document.getElementById('app-view');
             let data = JSON.parse(this.responseText);
             console.log(data);
             
             if (data.stream != null) {
-                $('#app-view').append('<div class="twitch-user-row"><div></div>' + data.stream.channel.display_name  + ' | ' + data.stream.game + ' | <a href="' + data.stream.channel.url + '" target="_blank">Go now!</a></div>');
+                appView.appendChild('<div class="twitch-user-row"><div></div>' + data.stream.channel.display_name  + ' | ' + data.stream.game + ' | <a href="' + data.stream.channel.url + '" target="_blank">Go now!</a></div>');
                 appView.lastChild.firstElementChild.classList.add('is-online');
             } else {
-                $('#app-view').append('<div class="twitch-user-row"><div></div>' + username + ' is not online.');
+                appView.appendChild('<div class="twitch-user-row"><div></div>' + username + ' is not online.');
                 appView.lastChild.firstElementChild.classList.add('is-offline');
             }
             rowCounter++;
@@ -106,8 +108,10 @@ function addTwitchUser(username, userID) {
     nextRequest.send();
 };
 
+/* Following functions are not supported in browsers < IE 9 */
+
 function isOnline() {
-    let arr = $('#app-view').children();
+    let arr = appView.children;
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].firstElementChild.className == 'is-offline') {
@@ -117,10 +121,9 @@ function isOnline() {
 };
 
 function showAll() {
-    let arr = $('#app-view').children();
+    let arr = appView.children;
 
     for (let i = 0; i < arr.length; i++) {
-        /* Following is not supported in browsers < IE 9 */
         if (arr[i].classList.contains('is-hidden')) {
             arr[i].classList.remove('is-hidden');
         }
