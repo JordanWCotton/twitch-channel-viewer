@@ -102,7 +102,7 @@ function addTwitchUser(username, userID) {
                 appView.appendChild(child);
                 appView.lastChild.firstElementChild.classList.add('is-online');
             } else {
-                let child = document.createElement(div);
+                let child = document.createElement('div');
                 child.innerHTML = '<div></div>' + username + ' is not online.';
                 child.classList.add('twitch-user-row');
                 appView.appendChild(child);
