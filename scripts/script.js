@@ -114,8 +114,6 @@ function addTwitchUser(username, userID) {
     nextRequest.send();
 };
 
-/* Following functions are not supported in browsers < IE 9 */
-
 function isOnline() {
     let arr = appView.children;
 
