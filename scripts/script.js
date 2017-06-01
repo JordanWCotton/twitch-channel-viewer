@@ -1,14 +1,17 @@
-const clientID = '';
+const clientID = 'lr4rv2eagssyln2lhrm19l8jrjn1mc';
+
 const twitchChannels = [
         {username: 'esl_sc2', id: '30220059'},
         {username: 'OgamingSC2', id: '71852806'},
         {username: 'freecodecamp', id: '79776140'}
     ];
+
 const channelRows = [
     {id: 'rowOne'},
     {id: 'rowTwo'},
     {id: 'rowThree'}
 ];
+
 const appView = document.getElementById('app-view');
 const userInput = document.getElementById('user-input');
 const submitButton = document.getElementById('submit-button');
@@ -58,7 +61,7 @@ showOnlineButton.addEventListener('click', () => {
     isOnlineSelected = !isOnlineSelected;
 })
 
-function findTwitchUser(user) {
+let findTwitchUser = (user) => {
     let httpRequest = new XMLHttpRequest();
 
     httpRequest.open('GET', 'https://api.twitch.tv/kraken/users?login=' + user);
@@ -78,10 +81,10 @@ function findTwitchUser(user) {
         }
     }
     httpRequest.send();
-}
+};
 
 
-function addTwitchUser(username, userID) {
+let addTwitchUser = (username, userID) => {
     let rowCounter = 4;
     let nextRequest = new XMLHttpRequest();
 
@@ -114,9 +117,8 @@ function addTwitchUser(username, userID) {
     nextRequest.send();
 };
 
-function isOnline() {
+let isOnline = () => {
     let arr = appView.children;
-
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].firstElementChild.className == 'is-offline') {
             arr[i].classList.add('is-hidden');
@@ -124,12 +126,11 @@ function isOnline() {
     };
 };
 
-function showAll() {
+let showAll = () => {
     let arr = appView.children;
-
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].classList.contains('is-hidden')) {
             arr[i].classList.remove('is-hidden');
-        }
+        } 
     };
 };
