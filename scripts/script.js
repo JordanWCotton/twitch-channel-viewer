@@ -16,7 +16,7 @@ const appView = document.getElementById('app-view');
 const userInput = document.getElementById('user-input');
 const submitButton = document.getElementById('submit-button');
 const showOnlineButton = document.getElementById('show-online');
-let isOnlineSelected = false;
+let onlineSelected = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     for (let channels in twitchChannels) {
@@ -51,14 +51,14 @@ submitButton.addEventListener('click', () => {
 });
 
 showOnlineButton.addEventListener('click', () => {
-    if (isOnlineSelected === false) {
+    if (onlineSelected === false) {
         isOnline();
         showOnlineButton.innerHTML = 'Show All';
     } else {
         showAll();
         showOnlineButton.innerHTML = '<div class="is-online"></div>Show Online';
     }
-    isOnlineSelected = !isOnlineSelected;
+    onlineSelected = !onlineSelected;
 })
 
 /* Searches for the inputted twitch profile, if found calls add function, alerts if not found */
