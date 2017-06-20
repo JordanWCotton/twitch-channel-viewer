@@ -1,4 +1,4 @@
-const clientID = 'lr4rv2eagssyln2lhrm19l8jrjn1mc';
+const clientID = '';
 
 const twitchChannels = [
         {username: 'esl_sc2', id: '30220059'},
