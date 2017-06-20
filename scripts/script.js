@@ -61,6 +61,7 @@ showOnlineButton.addEventListener('click', () => {
     isOnlineSelected = !isOnlineSelected;
 })
 
+/* Searches for the inputted twitch profile, if found calls add function, alerts if not found */
 let findTwitchUser = (user) => {
     let httpRequest = new XMLHttpRequest();
 
@@ -116,6 +117,9 @@ let addTwitchUser = (username, userID) => {
     }
     nextRequest.send();
 };
+
+
+/* Controls display of online/offine channels */
 
 let isOnline = () => {
     let arr = appView.children;
