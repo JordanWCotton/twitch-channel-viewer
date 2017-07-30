@@ -1,12 +1,18 @@
+/* Desktop styles */
+
+* {
+    font-family: 'Playfair Display', serif; 
+}
+
 #content-container { 
 	min-height: 100vh;
-	background-color: #8e44ad;
+	background-color: #07889B;
 }
 
 #app-header {
 	text-align: center;
 	padding-top: 5%;
-	color: #F7F7F7;
+	color: #FFFFFF;
 }
 
 #app-header h1 {
@@ -20,7 +26,8 @@
 }
 
 #show-online {
-	background-color: #95a5a6;
+	background-color: #66B9BF;
+	color: #FFFFFF;
 }
 
 #show-online div {
@@ -29,17 +36,18 @@
 }
 
 #show-all {
-	background-color: #95a5a6;
+	background-color: #66B9BF;
+	color: #FFFFFF;
 }
 
 #app-view {
-	background-color: #95a5a6;
+	background-color: #66B9BF;
 	border-radius: 6px;
 	min-height: 50px;
 }
 
 .twitch-user-row {
-	background-color: #373737;
+	background-color: #373737; 
 	width: 55%;
 	margin-bottom: 2%;
 	color: #F7F7F7;
@@ -79,6 +87,8 @@
 
 #submit-button {
 	margin-top: 3%;
+	background-color: #66B9BF;
+	color: #FFFFFF;
 }
 
 /* Mobile styles */
