@@ -4,4 +4,4 @@ This app utilizes Twitch's API for pulling channel and user data to be displayed
 This application is hosted on Heroku, and is available at https://ancient-stream-27001.herokuapp.com/index.html.
 
 # Development info
-This application is developed using vanilla ES6 javascript, to maximize the learning of fundamental tasks like making AJAX requests, handling JSON, and manipulating the DOM without the ease of a libraries assistance.
+This application is developed using vanilla ES6 JavaScript, to maximize the learning of fundamental tasks like making AJAX requests, handling JSON, and manipulating the DOM.
